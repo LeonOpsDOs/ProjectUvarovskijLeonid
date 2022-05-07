@@ -1,0 +1,19 @@
+input, option,select, button, ngx-dadata{
+  color: #00cc00;
+  outline: none;
+  border: none;
+  background: none;
+  text-align: center;
+}
+form
+{
+  float:left;
+}
+.title{
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,255 @@
+
+@media screen and (max-width: 992px){
+  .screen{  left: 10%}
+}
+.screen{
+  overflow: scroll;
+  top: 30%;
+  left: 10%;
+  border:5px solid #333;
+  border-radius:20px;
+  animation:colorPulse 5s infinite ease-in-out;
+  background-image:radial-gradient(#444, #111);
+  box-shadow:0 0 5vmin 1vmin #000 inset;
+  position: relative;
+  height:50%;
+  width:80%;
+}
+
+
+.scan {
+  animation:wave 10s infinite ease-in-out;
+  content:"";
+  height:20vh;
+  left:0;
+  opacity:.5;
+  position:absolute;
+  right:0;
+  z-index:1;
+}
+.autocomplete input{
+  background: none;
+}
+.inputModal{background: #549f52;
+color: black}
+.screen:after {
+  background-image:linear-gradient(transparent, transparent 3px, #222);
+  background-size:4px 4px;
+  bottom:0;
+  content:"";
+  left:0;
+  pointer-events:none;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:2;
+}
+
+p:last-child:after {
+  animation:blink 1s infinite;
+  content:"_";
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    color:#0c0;
+  }
+  48%, 52% {
+    color:#090;
+  }
+  50% {
+    color:#060;
+  }
+}
+
+@keyframes wave {
+  0% {
+    box-shadow:0 -10vh 20vh #0c0;
+    top:-100vh;
+  }
+  48%, 52% {
+    box-shadow:0 -10vh 20vh #090;
+  }
+  50% {
+    box-shadow:0 -10vh 20vh #060;
+  }
+  100% {
+    box-shadow:0 -10vh 20vh #0c0;
+    top:200vh;
+  }
+}
+a{
+  color:#090
+}
+@keyframes blink {
+  50% {
+    opacity:0;
+  }
+}
+.table{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.table input{
+  width: 20%;
+}
+
+
+#main {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#okno {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  padding: 15px;
+  border: 3px solid #0000cc;
+  border-radius: 10px;
+  color: #0000cc;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+#main:target {display: block;}
+
+body {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #292b2c;
+  background-color: #fff;
+}
+
+/* свойства модального окна по умолчанию */
+.modal {
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5); /* цвет фона */
+  z-index: 1050;
+  opacity: 0; /* по умолчанию модальное окно прозрачно */
+  -webkit-transition: opacity 200ms ease-in;
+  -moz-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  pointer-events: none; /* элемент невидим для событий мыши */
+  margin: 0;
+  padding: 0;
+}
+/* при отображении модального окно */
+.modal:target {
+  opacity: 1; /* делаем окно видимым */
+  pointer-events: auto; /* элемент видим для событий мыши */
+  overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto; /* для отображения модального окна по центру */
+  }
+}
+/* свойства для блока, содержащего контент модального окна */
+.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+}
+@media (min-width: 768px) {
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  }
+}
+/* свойства для заголовка модального окна */
+.modal-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #eceeef;
+}
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+/* свойства для кнопки "Закрыть" */
+.close {
+  float: right;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+  text-decoration: none;
+}
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close:focus, .close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: .75;
+}
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+}
+.modal-body input{
+  width: 200px;
+}
+.modal-body th{
+  width: 100px;
+}
+.buttonReplacer:hover{
+  color: #006600;
+}

@@ -1,0 +1,107 @@
+<!--(scroll)="ScrollDownload($event)"-->
+<div class="screen" >
+
+  <form [formGroup]="userFormGroup">
+    <div class="table1">
+      <table class="table">
+        <tr>
+          <th></th>
+          <th>
+            <div class="field">
+              FIO
+            </div>
+          </th>
+          <th>
+            <div class="field">
+              Address
+            </div>
+          </th>
+          <th>
+
+          </th>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="field">
+              <label for="FIO"></label>
+              <ngx-dadata [config]="configFio" id="FIO"
+                #newItem1
+                (keyup.enter)="addItem1(newItem1.value); newItem1.value = ''"
+                type="text" id="FIO" formControlName="FIO"></ngx-dadata>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <label for="address"></label>
+              <ngx-dadata [config]="configAddress" id="address"
+                          #newItem2
+                          (keyup.enter)="addItem2(newItem2.value); newItem2.value = ''" ></ngx-dadata>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <button type="button" (click)=" extentedBuncer();addItem(newItem1.value,newItem2.value);xre();newItem1.value = '';newItem2.value = ''">Submit</button>
+            </div>
+          </td>
+        </tr>
+        <tr *ngFor="let item of tablestr">
+          <td>{{item+1}}</td>
+          <td>{{buncer[item].name}}</td>
+          <td>{{buncer[item].address}}</td>
+          <td><a href="#openModal">Replace</a></td>
+          <div id="openModal" class="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title">Replace</h3>
+                  <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+
+                  <table>
+                    <tr>
+                      <th><div class="field">
+                        <label for="FIO">FIO </label>
+                        <ngx-dadata [config]="configFio" id="FIO" #FIOReplace
+                                    (keyup.enter)="addItem1(newItem1.value); newItem1.value = ''"
+                                    type="text"  formControlName="FIO"><input style="background: #00cc00"></ngx-dadata>
+                      </div></th>
+                    </tr>
+                    <tr>
+                      <td><div class="field">
+                        <label for="address">address</label>
+                        <ngx-dadata [config]="configAddress" id="address"
+                          #addressReplace
+                          type="text" formControlName="address"></ngx-dadata>
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="field">
+                        <label for="address">number</label>
+                        <div class="inputModal"><input
+                          #numberReplace
+                          type="text" formControlName="address"></div>
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="field">
+                        <label for="address">bunker</label>
+
+                        <div class="inputModal"><input
+                          #bunkerReplace
+                          type="text" formControlName="address"></div>
+                      </div></td>
+                    </tr>
+                  </table>
+                    <div class="buttonReplace"><button class="buttonReplacer" (click)="Replacer(FIOReplace.value,addressReplace.value,numberReplace.value,bunkerReplace.value)">Replace</button> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tr>
+      </table>
+    </div>
+  </form>
+</div>
+
