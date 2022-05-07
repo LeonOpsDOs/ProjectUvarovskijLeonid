@@ -33,7 +33,7 @@ export class RegisteringComponent {
   extentedBuncer(){
     if (this.n==1 ){
       this.buncer = this.PersonList1
-      this.xN = this.tablestr3.length
+      this.xN = this.tablestr1.length
 
       this.tablestrNONE = this.tablestr1
       this.tablestr = this.tablestrNONE
@@ -42,7 +42,7 @@ export class RegisteringComponent {
     if (this.n==2){
       this.buncer = this.PersonList2
 
-      this.xN = this.tablestr3.length
+      this.xN = this.tablestr2.length
 
 
       this.tablestrNONE = this.tablestr2
@@ -88,14 +88,13 @@ export class RegisteringComponent {
     type: DadataType.fio,
   };
   xre(){
-    if (this.x>=100){
+    if (this.xN>=100){
       alert('набрано 100 жителей')
       return
     }
     while (this.tablestr.length<this.m){
       this.xN = this.tablestr.length
       this.tablestr.push(this.xN)
-
     }
     this.xN = this.tablestr.length
     this.tablestr.push(this.xN)
