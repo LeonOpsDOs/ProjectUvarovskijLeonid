@@ -13,9 +13,9 @@
     <li><a href="" (click)="Firstfunction()">Главная</a></li>
     <li><a href="">Выбор убежища</a>
       <ul>
-        <li><a href="" (click)="extends(1)">Убежище 1</a></li>
-        <li><a href="" (click)="extends(2)">Убежище 2</a></li>
-        <li><a href="" (click)="extends(3)">Убежище 3</a></li>
+        <li><a  (click)="extends(1)">Убежище 1</a></li>
+        <li><a  (click)="extends(2)">Убежище 2</a></li>
+        <li><a  (click)="extends(3)">Убежище 3</a></li>
       </ul>
     </li>
     <li><a href="" (click)="Histori()">История</a></li>
@@ -29,6 +29,8 @@
 <div class="block2">
   <app-list [n] = 'numberBunker'></app-list>
 </div>
+<div class="blockBorderTab"></div>
+
 
 <div class="block35">
   <app-block3></app-block3>

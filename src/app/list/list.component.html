@@ -17,8 +17,8 @@
   <div class="list">
     <table class="Uplist">
     <tr *ngFor="let item of tablestr">
-      <td> <img src="../../assets/woltboy/{{item}}.jpg"></td>
-      <td>{{item+1}}</td>
+      <td> <img src="../../assets/woltboy/{{item%8}}.jpg"></td>
+      <td>{{item}}</td>
       <td>{{buncer[item].name}}</td>
       <td>{{buncer[item].address}}</td>
     </tr>

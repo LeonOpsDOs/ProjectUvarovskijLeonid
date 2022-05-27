@@ -5,6 +5,7 @@ import buncer1 from '../registring/buncers/buncer1.json';
 import buncer2 from '../registring/buncers/buncer2.json';
 // @ts-ignore
 import buncer3 from '../registring/buncers/buncer3.json';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -64,4 +65,6 @@ export class ListComponent{
   m = this.buncer.length
   x = 0
   xN = 0
+
+
 }
