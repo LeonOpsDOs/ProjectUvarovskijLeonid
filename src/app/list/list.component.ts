@@ -67,4 +67,15 @@ export class ListComponent{
   xN = 0
 
 
+  modalBuncer(n: number) {
+    if (n==1){
+      prompt('title');
+    }
+    if (n==2){
+      prompt('title');
+    }
+    if (n==3){
+      prompt('title');
+    }
+  }
 }

@@ -36,7 +36,8 @@ app-list{
   background-image:radial-gradient(#444, #111);
 }
 .block35{
-  background: url("../assets/backgraund3.jpg") center no-repeat ;
+  background: url("../assets/backgraund3.jpg") no-repeat center top ;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-size: 100%;
