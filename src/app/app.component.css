@@ -1,23 +1,21 @@
 *{
+  cursor: url("../assets/free-icon-hand-7600896.cur"), auto;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.tableMenu ,.tabledownMenu{
-  border-spacing: 10px;
-  position: center;
-  top: 30%;
-  left: 0;
-  border:5px solid #333;
-  border-radius:20px;
-  height:50%;
-  width:100%;
+.block2{
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
-.tableMenu td,.tableMenu li ,.tabledownMenu td{
-  width: 100px;
-  text-align: center;
+app-list{
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
+
 @media screen and (max-width: 992px){
   .tableMenu{
     flex: auto;
@@ -25,10 +23,6 @@
     right: 100px;
   }
 
-  app-slider{
-
-    right: 300px;
-  }
 }
 .block1{
   position: relative;
@@ -40,36 +34,127 @@
   font-family:'Fira Mono', monospace;
   font-size:20px;
 }
-button:hover{
+a:hover{
   color: #006600;
 }
-a:hover {
-  color:#D43737;/*добавляем эффект при наведении*/
+.dropdown-content {
+  display: none;
+  position: center;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-app-slider{
-  padding-left: 20%;
-  padding-bottom: 10%;
+.dropdown-content button {
+  text-align: center;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
-
-tableMenu button{
-  border: 2px solid red;
+.dropdown-content button:hover{
+  color: #006600;
 }
-
-
-
-
-
-
-.tabledownMenu button{
-  border: black;
-
+.dropdown:hover .dropdown-content {
+  display: block;
 }
-
-.downMenu{
+.block35{
+  background: url("../assets/backgraund3.jpg") center no-repeat ;
+  position: relative;
   width: 100%;
-  height: 10%;
+  height: 100%;
+  background-size: 100%;
+}
+app-block3{
   position: absolute;
-  bottom: 0;
-  background: #3b3b3b;
+  width: 100%;
+  height: 100%;
+}
+
+ul.h-menu {
+  margin: 0;
+  padding-left: auto;
+  display: flex;
+  width: 100%;
+  height: 34px;
+  background-color: #2b2b2b;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4f4f4f), to(#2b2b2b));
+  background-image: -webkit-linear-gradient(#4f4f4f, #2b2b2b);
+  background-image: -moz-linear-gradient(top, #4f4f4f, #2b2b2b);
+  background-image: -ms-linear-gradient(#4f4f4f, #2b2b2b);
+  background-image: -o-linear-gradient(#4f4f4f, #2b2b2b);
+  background-image: linear-gradient(#4f4f4f, #2b2b2b);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f4f4f', endColorstr='#2b2b2b', GradientType=0);
+}
+
+ul.h-menu li {
+  list-style: none;
+  border-right: 1px solid #4f4f4f;
+  position: relative;
+  width: auto;
+}
+
+ul.h-menu li a {
+  color: #00cc00;
+  display: flex;
+  font-family: Arial, serif;
+  font-size: 13px;
+  padding: 8px 20px 10px;
+  text-decoration: none;
+  border-right: 1px solid #2b2b2b;
+}
+
+ul.h-menu li a:hover {
+  background-color: #2b2b2b;
+}
+
+ul.h-menu li:first-child a:hover {
+  border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+}
+
+ul.h-menu li ul {
+  display: none;
+}
+
+ul.h-menu li:hover ul {
+  display: block;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  background-color: #2b2b2b;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+ul.h-menu li:hover ul li {
+  float: none;
+  border-right: none;
+}
+
+ul.h-menu li:hover ul li a {
+  border-top: 1px solid #4f4f4f;
+  border-right: none;
+  padding: 6px 20px 8px;
+  display: flex;
+}
+
+ul.h-menu li:hover ul li a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+ul.h-menu li:hover ul li:first-child a:hover {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
 }

@@ -18,9 +18,6 @@ import {DadataAddress, DadataConfig, DadataSuggestion, DadataType} from "@kolkov
   styleUrls: ['./registering.component.css','../../assets/base.css']
 })
 export class RegisteringComponent {
-
-
-
   @Input()
   n : any
 
@@ -120,22 +117,23 @@ export class RegisteringComponent {
     if (this.clear == 1) {
       this.PersonList1 = []
       this.clear = 0
-      this.tablestr1 = []
+      this.tablestr = []
     }
     if (this.clear == 2) {
       this.PersonList2 = []
       this.clear = 0
-      this.tablestr2 = []
+      this.tablestr = []
     }
     if (this.clear == 3) {
       this.PersonList3 = []
       this.clear = 0
-      this.tablestr3 = []
+      this.tablestr = []
     }
   }
   addItem(Name:string, Address:string,){
     this.ClearBunker(this.clear)
     this.buncer.push({name:Name,address:Address})
+    JSON.stringify({name:Name,address:Address})
   }
 
   public userFormGroup = new FormGroup({
@@ -158,11 +156,4 @@ export class RegisteringComponent {
     // @ts-ignore
     this.ReplaceBunker[number-1] = { name: FIO, address: address }
   }
-
-
-
-
-
-
-
 }

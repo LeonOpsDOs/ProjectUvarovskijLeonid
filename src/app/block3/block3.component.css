@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.block3,.block4,.block5{
+  width: 100%;
+}
+.block3{
+  height: 1080px;
+}
+.container_slider_css {
+  margin: 2% auto;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+}
+
+.photo_slider_css {
+  position: absolute;
+  animation: round 16s infinite;
+  opacity: 0;
+  width: 100%;
+}
+
+@keyframes round {
+  25% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+img:nth-child(1) {
+  animation-delay: 12s;
+}
+
+img:nth-child(2) {
+  animation-delay: 8s;
+}
+
+img:nth-child(3) {
+  animation-delay: 4s;
+}
+
+img:nth-child(4) {
+  animation-delay: 0s;
+}
+
+@media(min-width:0px) and (max-width:320px) {
+  /* совсем маленькие экраны андроидов */
+  .container_slider_css{
+    width: 80%;
+    height: 190px;
+  }
+}
+
+@media(min-width:321px) and (max-width:480px) {
+  /* популярные разрешения смартфонов уже более позднего поколения андроид */
+  .container_slider_css{
+    width: 80%;
+    height: 190px;
+  }
+}
+.cinemaRoom{
+  margin: 10% auto;
+  display: flex;
+  width: 50%;
+  height: 45%;
+  background: url("../../assets/cinema.jpg") center no-repeat;
+  border:5px solid #333;
+  border-radius:20px;
+  position: center;
+}

@@ -27,21 +27,20 @@
               <label for="FIO"></label>
               <ngx-dadata [config]="configFio" id="FIO"
                 #newItem1
-                (keyup.enter)="addItem1(newItem1.value); newItem1.value = ''"
-                type="text" id="FIO" formControlName="FIO"></ngx-dadata>
+                type="text" formControlName="FIO"></ngx-dadata>
             </div>
           </td>
           <td>
             <div class="field">
               <label for="address"></label>
               <ngx-dadata [config]="configAddress" id="address"
-                          #newItem2
-                          (keyup.enter)="addItem2(newItem2.value); newItem2.value = ''" ></ngx-dadata>
+                          #newItem2>
+              </ngx-dadata>
             </div>
           </td>
           <td>
             <div class="field">
-              <button type="button" (click)=" extentedBuncer();addItem(newItem1.value,newItem2.value);xre();newItem1.value = '';newItem2.value = ''">Submit</button>
+              <button type="button" (click)="extentedBuncer();addItem(newItem1.value,newItem2.value);xre();newItem1.value='';newItem2.value=''">Submit</button>
             </div>
           </td>
         </tr>
@@ -65,7 +64,7 @@
                         <label for="FIO">FIO </label>
                         <ngx-dadata [config]="configFio" id="FIO" #FIOReplace
                                     (keyup.enter)="addItem1(newItem1.value); newItem1.value = ''"
-                                    type="text"  formControlName="FIO"><input style="background: #00cc00"></ngx-dadata>
+                                    type="text"  formControlName="FIO"><input></ngx-dadata>
                       </div></th>
                     </tr>
                     <tr>

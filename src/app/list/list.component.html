@@ -1,0 +1,27 @@
+<div class="block2">
+  <div class="menu">
+    <table class="UpMenu">
+      <tr>
+        <td>
+          <button (click)="extentedBuncer()">История</button>
+        </td>
+        <td>
+          <button >Очистить убежище</button>
+        </td>
+        <td>
+          <button >Обновить компьютер</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="list">
+    <table class="Uplist">
+    <tr *ngFor="let item of tablestr">
+      <td> <img src="../../assets/woltboy/{{item}}.jpg"></td>
+      <td>{{item+1}}</td>
+      <td>{{buncer[item].name}}</td>
+      <td>{{buncer[item].address}}</td>
+    </tr>
+    </table>
+  </div>
+</div>

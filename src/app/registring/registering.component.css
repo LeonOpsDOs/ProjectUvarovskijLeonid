@@ -253,3 +253,7 @@ body {
 .buttonReplacer:hover{
   color: #006600;
 }
+
+.autocomplete{
+  color: plum;
+}
